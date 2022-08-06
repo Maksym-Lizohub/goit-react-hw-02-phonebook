@@ -22,7 +22,9 @@ class App extends Component {
     const { name } = contact;
 
     if (
-      this.state.contacts.filter(contact => contact.name === name).length > 0
+      this.state.contacts.filter(
+        contact => contact.name.toLowerCase === name.toLowerCase
+      ).length > 0
     ) {
       alert(`${name} is already in contacts`);
       return;
